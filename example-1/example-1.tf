@@ -8,7 +8,7 @@ provider "google" {
 resource "google_compute_instance" "default" {
   name = "test-google-compute-instance-via-terraform"
   machine_type = "n1-standard-1"
-  zone = "europe-west1-d"
+  zone = "europe-west1-c"
   tags = [
     "tag-1",
     "tag-2"
