@@ -3,7 +3,7 @@
 provider "google" {
   region = "${var.region}"
   project = "${var.project_name}"
-  credentials = "${file("${var.credentials_file_path}")}"
+  credentials = "${file("${var.credentials_file}")}"
 }
 
 resource "google_compute_http_health_check" "default" {
