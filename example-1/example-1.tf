@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = "${file("secrets/mattcalthrop-3ed5cdde44c1.json")}"
+  credentials = "${file("../secrets/mattcalthrop-3ed5cdde44c1.json")}"
   project = "mattcalthrop"
   region = "europe-west1"
 }
@@ -7,7 +7,7 @@ provider "google" {
 # Create a new instance
 resource "google_compute_instance" "default" {
   name = "test-google-compute-instance-via-terraform"
-  machine_type = "n1-standard-1"
+  machine_type = "f1-micro"
   zone = "europe-west1-c"
   tags = [
     "tag-1",
@@ -16,12 +16,6 @@ resource "google_compute_instance" "default" {
 
   disk {
     image = "ubuntu-1510-wily-v20160315"
-  }
-
-  // Local SSD disk
-  disk {
-    type = "local-ssd"
-    scratch = true
   }
 
   network_interface {
